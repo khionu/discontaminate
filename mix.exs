@@ -1,9 +1,9 @@
-defmodule Discontaminate.MixProject do
+defmodule Discon.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :discontaminate,
+      app: :discon,
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
@@ -15,15 +15,14 @@ defmodule Discontaminate.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Discontaminate.Application, []}
+      mod: {Discon, []}
     ]
   end
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:alchemy, "~> 0.6.4", hex: :discord_alchemy}
     ]
   end
 end
